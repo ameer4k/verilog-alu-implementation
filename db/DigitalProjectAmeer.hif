@@ -1,0 +1,295 @@
+Version 9.0 Build 132 02/25/2009 SJ Web Edition
+10
+3344
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+ALUBlock
+# storage
+db|DigitalProjectAmeer.(0).cnf
+db|DigitalProjectAmeer.(0).cnf
+# case_insensitive
+# source_file
+ALUBlock.bdf
+eef964f25b245a279c2385dbcfdd819d
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# macro_sequence
+
+# end
+# entity
+Adder
+# storage
+db|DigitalProjectAmeer.(2).cnf
+db|DigitalProjectAmeer.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+Adder.v
+1bdcd28dddb52be297c91d79ad42eae
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Adder:adder
+}
+# macro_sequence
+
+# end
+# entity
+Subtractor
+# storage
+db|DigitalProjectAmeer.(4).cnf
+db|DigitalProjectAmeer.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+Subtractor.v
+403da140563ec2cd5932d6cca4bb8c24
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Subtractor:subtractor
+}
+# macro_sequence
+
+# end
+# entity
+FullAdder
+# storage
+db|DigitalProjectAmeer.(1).cnf
+db|DigitalProjectAmeer.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+FullAdder.v
+acc22fcb3ef5979f8fd546d48116039
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+Adder:adder|FullAdder:FA0
+Adder:adder|FullAdder:FA1
+Adder:adder|FullAdder:FA2
+Adder:adder|FullAdder:FA3
+Subtractor:subtractor|FullAdder:FA0
+Subtractor:subtractor|FullAdder:FA1
+Subtractor:subtractor|FullAdder:FA2
+Subtractor:subtractor|FullAdder:FA3
+}
+# macro_sequence
+
+# end
+# entity
+ALU
+# storage
+db|DigitalProjectAmeer.(3).cnf
+db|DigitalProjectAmeer.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ALU.v
+2e2fbee56c7d4a7890787bde293ad328
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# macro_sequence
+
+# end
+# entity
+AndGate
+# storage
+db|DigitalProjectAmeer.(6).cnf
+db|DigitalProjectAmeer.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+AndGate.v
+8a5f1aa37c6f072a8f7e9f85738961a
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+AndGate:andGate
+}
+# macro_sequence
+
+# end
+# entity
+OrGate
+# storage
+db|DigitalProjectAmeer.(5).cnf
+db|DigitalProjectAmeer.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+OrGate.v
+10d7519c629e9253a9fc3f30476ce355
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+OrGate:orGate
+}
+# macro_sequence
+
+# end
+# entity
+ALUDataFlow
+# storage
+db|DigitalProjectAmeer.(7).cnf
+db|DigitalProjectAmeer.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ALUDataFlow.v
+44c592f756c95be28d256826627ed4
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

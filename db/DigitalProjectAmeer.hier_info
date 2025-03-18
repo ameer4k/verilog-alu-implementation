@@ -1,0 +1,176 @@
+|ALUDataFlow
+A[0] => A[0]~3.IN4
+A[1] => A[1]~2.IN4
+A[2] => A[2]~1.IN4
+A[3] => A[3]~0.IN4
+B[0] => B[0]~3.IN4
+B[1] => B[1]~2.IN4
+B[2] => B[2]~1.IN4
+B[3] => B[3]~0.IN4
+OpCode[0] => Equal0.IN0
+OpCode[0] => Equal1.IN0
+OpCode[0] => Equal2.IN1
+OpCode[0] => Equal3.IN0
+OpCode[1] => Equal0.IN1
+OpCode[1] => Equal1.IN1
+OpCode[1] => Equal2.IN0
+OpCode[1] => Equal3.IN1
+OpCode[2] => Equal0.IN2
+OpCode[2] => Equal1.IN2
+OpCode[2] => Equal2.IN2
+OpCode[2] => Equal3.IN2
+Result[0] <= Result[0]~7.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= Result[1]~10.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= Result[2]~13.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= Result[3]~18.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Adder:adder
+A[0] => A[0]~3.IN1
+A[1] => A[1]~2.IN1
+A[2] => A[2]~1.IN1
+A[3] => A[3]~0.IN1
+B[0] => B[0]~3.IN1
+B[1] => B[1]~2.IN1
+B[2] => B[2]~1.IN1
+B[3] => B[3]~0.IN1
+cin => cin~0.IN1
+Result[0] <= FullAdder:FA0.port3
+Result[1] <= FullAdder:FA1.port3
+Result[2] <= FullAdder:FA2.port3
+Result[3] <= FullAdder:FA3.port3
+CarryOut <= FullAdder:FA3.port4
+
+
+|ALUDataFlow|Adder:adder|FullAdder:FA0
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Adder:adder|FullAdder:FA1
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Adder:adder|FullAdder:FA2
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Adder:adder|FullAdder:FA3
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Subtractor:subtractor
+A[0] => A[0]~3.IN1
+A[1] => A[1]~2.IN1
+A[2] => A[2]~1.IN1
+A[3] => A[3]~0.IN1
+cin => cin~0.IN1
+Result[0] <= FullAdder:FA0.port3
+Result[1] <= FullAdder:FA1.port3
+Result[2] <= FullAdder:FA2.port3
+Result[3] <= FullAdder:FA3.port3
+BorrowOut <= FullAdder:FA3.port4
+
+
+|ALUDataFlow|Subtractor:subtractor|FullAdder:FA0
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Subtractor:subtractor|FullAdder:FA1
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Subtractor:subtractor|FullAdder:FA2
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|Subtractor:subtractor|FullAdder:FA3
+A => AxorB.IN0
+A => AB.IN0
+B => AxorB.IN1
+B => AB.IN1
+Cin => comb~0.IN0
+Cin => BCin.IN0
+Sum <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|OrGate:orGate
+A[0] => comb~0.IN0
+A[1] => comb~1.IN0
+A[2] => comb~2.IN0
+A[3] => comb~3.IN0
+B[0] => comb~0.IN1
+B[1] => comb~1.IN1
+B[2] => comb~2.IN1
+B[3] => comb~3.IN1
+Result[0] <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= comb~2.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= comb~3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALUDataFlow|AndGate:andGate
+A[0] => comb~0.IN0
+A[1] => comb~1.IN0
+A[2] => comb~2.IN0
+A[3] => comb~3.IN0
+B[0] => comb~0.IN1
+B[1] => comb~1.IN1
+B[2] => comb~2.IN1
+B[3] => comb~3.IN1
+Result[0] <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= comb~1.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= comb~2.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= comb~3.DB_MAX_OUTPUT_PORT_TYPE
+
+
